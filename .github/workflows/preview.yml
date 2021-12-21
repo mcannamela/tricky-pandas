@@ -22,8 +22,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.ACTIONS_TOKEN }}
+
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-versions }}
