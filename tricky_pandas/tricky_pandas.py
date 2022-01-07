@@ -1,3 +1,4 @@
+"""A collection of tricky pandas functions."""
 from typing import List
 
 import numpy as np
@@ -23,7 +24,6 @@ def cumulative_differences(df: pd.DataFrame, diff_on: str, join_on: List[str], d
         New DataFrame containing the differences. Each record will have "starting" values suffixed with `_0` and
         "current" values suffixed by `_1`. Differences will be suffixed by `_diff`.
     """
-
     diffs_df = (
         df[df[diff_on] == df[diff_on].min()]
         .drop(columns=[diff_on])

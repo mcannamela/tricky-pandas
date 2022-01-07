@@ -1,3 +1,4 @@
+"""Tests for tricky pandas functions."""
 import numpy as np
 import pandas as pd
 
@@ -5,6 +6,7 @@ from tricky_pandas.tricky_pandas import augment_with_backward_diffs, cumulative_
 
 
 def test_cumulative_differences():
+    """Ensure we match manually computed differences."""
     df = pd.DataFrame(dict(a=[3, 2, 1, 2, 3, 1], b=[1.1, 0.9, 0.6, 0.2, 0.4, 0.8], c=['x', 'x', 'x', 'y', 'y', 'y']))
 
     exp_diffs_df = pd.DataFrame(
@@ -28,6 +30,7 @@ def test_cumulative_differences():
 
 
 def test_augment_with_backward_diffs():
+    """Ensure we match manually computed differences."""
     df = pd.DataFrame(dict(a=[3, 2, 1], b=[1.1, 0.9, 0.6]))
 
     exp_aug = pd.DataFrame(
@@ -39,6 +42,7 @@ def test_augment_with_backward_diffs():
 
 
 def test_normalized_sum():
+    """Ensure we computed ranks correctly."""
     n = 3
     df = pd.DataFrame(
         dict(
@@ -66,6 +70,7 @@ def test_normalized_sum():
 
 
 def test_normalized_sum_again():
+    """Ensure ranks are consistent with normed sums."""
     n = 3
     df = pd.DataFrame(
         dict(
