@@ -51,7 +51,7 @@ def test_normalized_sum():
     v = df.c + df.b + np.array([vals[k] for k in df.a])
     df['v'] = v
 
-    x = normalized_sum(df, ['a'], ['b', 'c'], 'v', rank_by_=['c'])
+    x = normalized_sum(df, ['a'], ['b', 'c'], 'v', rank_by=['c'])
 
     avg_normed_measure = 'avg_normed_v_sum'
     rank_col = 'avg_normed_v_sum_rank'
@@ -78,7 +78,7 @@ def test_normalized_sum_again():
     v = df.c + df.b + np.array([vals[k] for k in df.a])
     df['v'] = v
 
-    x = normalized_sum(df, ['a'], ['b', 'c'], 'v', rank_by_=[])
+    x = normalized_sum(df, ['a'], ['b', 'c'], 'v', rank_by=[])
 
     avg_normed_measure = 'avg_normed_v_sum'
     rank_col = 'avg_normed_v_sum_rank'
